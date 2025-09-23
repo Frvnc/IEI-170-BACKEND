@@ -5,6 +5,11 @@ from rest_framework import viewsets
 from .serializer import Nacionalidad_Serializer as nacser, Autor_Serializer as autser, Comuna_Serializer as comser, Direccion_Serializer as dirser, Biblioteca_Serializer as bibser, Lector_Serializer as lecser, Categoria_Serializer as catser, Libro_Serializer as libser, Prestamo_Serializer as preser
 from .models import Nacionalidad, Autor, Comuna, Direccion, Biblioteca, Lector, Categoria, Libro, Prestamo
 # Create your views here.
+
+
+def pagina_inicio(request):
+ return render(request, 'biblioteca/inicio.html')
+
 class Nacionalidad_ViewSet(viewsets.ModelViewSet):
 # acá creamos una QUERY a nuestra tabla, trayendo todos los campos como un objeto.
  queryset = Nacionalidad.objects.all()
